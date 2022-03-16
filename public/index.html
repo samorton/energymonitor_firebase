@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Enegry Usage</title>
+    <title>Energy Usage</title>
 
     <!-- include Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
@@ -27,11 +27,11 @@
       }
 
       // Initialize Firebase
-      const app = initializeApp(firebaseConfig)
-      const analytics = getAnalytics(app)
+      firebase.initializeApp(firebaseConfig);
+
       // Make auth and database references
-      const auth = firebase.auth()
-      const db = firebase.database()
+      const auth = firebase.auth();
+      const db = firebase.database();
     </script>
 
     <!-- include highchartsjs to build the charts-->

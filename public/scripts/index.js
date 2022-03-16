@@ -164,12 +164,12 @@ function epochToJsDate(epochTime){
         var pressure = jsonData.pressure;
         var timestamp = jsonData.timestamp;
         // Update DOM elements
-        var gaugeT = createTemperatureGauge();
-        var gaugeH = createHumidityGauge();
-        gaugeT.draw();
-        gaugeH.draw();
-        gaugeT.value = temperature;
-        gaugeH.value = humidity;
+        var temperatureGauge = createTemperatureGauge();
+        var powerGauge = createPowerGauge();
+        temperatureGauge.draw();
+        powerGauge.draw();
+        temperatureGauge.value = temperature;
+        powerGauge.value = humidity;
         updateElement.innerHTML = epochToDateTime(timestamp);
       });
   
@@ -197,16 +197,16 @@ function epochToJsDate(epochTime){
           if (snapshot.exists()) {
             var jsonData = snapshot.toJSON();
             console.log(jsonData);
-            var temperature = jsonData.temperature;
-            var humidity = jsonData.humidity;
-            var pressure = jsonData.pressure;
+            var temperature = jsonData.tmpr;
+            var deviceTime = jsonData.time;
+            var energy = jsonData.ch2_watts;
             var timestamp = jsonData.timestamp;
             var content = '';
             content += '<tr>';
             content += '<td>' + epochToDateTime(timestamp) + '</td>';
             content += '<td>' + temperature + '</td>';
-            content += '<td>' + humidity + '</td>';
-            content += '<td>' + pressure + '</td>';
+            content += '<td>' + energy + '</td>';
+            content += '<td>' + deviceTime + '</td>';
             content += '</tr>';
             $('#tbody').prepend(content);
             // Save lastReadingTimestamp --> corresponds to the first timestamp on the returned snapshot data

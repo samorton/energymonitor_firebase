@@ -51,35 +51,34 @@ function createTemperatureGauge() {
     return gauge;
 }
 
-// Create Humidity Gauge
-function createHumidityGauge(){
+// Create Current POwer Gauge
+function createPowerGauge(){
     var gauge = new RadialGauge({
         renderTo: 'gauge-humidity',
         width: 300,
         height: 300,
-        units: "Humidity (%)",
+        units: "Power (watts)",
         minValue: 0,
-        maxValue: 100,
+        maxValue: 5000,
         colorValueBoxRect: "#049faa",
         colorValueBoxRectEnd: "#049faa",
         colorValueBoxBackground: "#f1fbfc",
         valueInt: 2,
         majorTicks: [
             "0",
-            "20",
-            "40",
-            "60",
-            "80",
-            "100"
-    
+            "1000",
+            "2000",
+            "3000",
+            "4000",
+            "5000"
         ],
         minorTicks: 4,
         strokeTicks: true,
         highlights: [
             {
-                "from": 80,
-                "to": 100,
-                "color": "#03C0C1"
+                "from": 4000,
+                "to": 5000,
+                "color": "#FF0000"
             }
         ],
         colorPlate: "#fff",
