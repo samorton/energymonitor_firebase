@@ -110,16 +110,14 @@ const setupUI = (user) => {
             chartRef.set(chartsRangeInputElement.value);
         };
 
-        //CHECKBOXES
-        // Checbox (cards for sensor readings)
         cardsCheckboxElement.addEventListener('change', (e) => {
             cardsReadingsElement.style.display = 'block';
         });
-        // Checbox (gauges for sensor readings)
+
         gaugesCheckboxElement.addEventListener('change', (e) => {
             gaugesReadingsElement.style.display = 'block';
         });
-        // Checbox (charta for sensor readings)
+
         chartsCheckboxElement.addEventListener('change', (e) => {
             chartsDivElement.style.display = 'block';
         });
