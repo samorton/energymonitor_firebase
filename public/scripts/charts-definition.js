@@ -2,48 +2,9 @@
 window.addEventListener('load', onload);
 
 function onload(event){
-  tempChart = createTemperatureChart();
   powerChart = createPowerChart();
 }
 
-// Create Temperature Chart
-function createTemperatureChart() {
-  var chart = new Highcharts.Chart({
-    chart:{ 
-      renderTo:'chart-temperature',
-      type: 'spline' 
-    },
-    series: [
-      {
-        name: 'Time'
-      }
-    ],
-    title: { 
-      text: undefined
-    },
-    plotOptions: {
-      line: { 
-        animation: false,
-        dataLabels: { 
-          enabled: true 
-        }
-      }
-    },
-    xAxis: {
-      type: 'datetime',
-      dateTimeLabelFormats: { second: '%H:%M:%S' }
-    },
-    yAxis: {
-      title: { 
-        text: 'Temperature °C'
-      }
-    },
-    credits: { 
-      enabled: false 
-    }
-  });
-  return chart;
-}
 
 // Create Power Chart
 function createPowerChart(){
