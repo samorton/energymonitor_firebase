@@ -93,7 +93,7 @@ function createPowerGauge(){
         needleCircleOuter: true,
         needleCircleInner: false,
         animationDuration: 1500,
-        animationRule: "bounce"
+        animationRule: "elastic"
 
     });
     return gauge;
