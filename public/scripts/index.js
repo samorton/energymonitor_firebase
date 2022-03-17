@@ -158,10 +158,10 @@ function epochToJsDate(epochTime){
       // Get the latest readings and display on gauges
       dbRef.orderByKey().limitToLast(1).on('child_added', snapshot =>{
         var jsonData = snapshot.toJSON(); // example: {temperature: 25.02, humidity: 50.20, pressure: 1008.48, timestamp:1641317355}
-        var temperature = jsonData.temperature;
+        var temperature = jsonData.tmpr;
         var energy =jsonData.ch2_watts;
-
         var timestamp = jsonData.timestamp;
+
         // Update DOM elements
         var temperatureGauge = createTemperatureGauge();
         var powerGauge = createPowerGauge();
