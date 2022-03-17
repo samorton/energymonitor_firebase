@@ -35,7 +35,7 @@ function createTemperatureChart() {
     },
     yAxis: {
       title: { 
-        text: 'Temperature #8451'
+        text: 'Temperature °C'
       }
     },
     credits: { 
