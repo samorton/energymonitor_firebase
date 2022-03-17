@@ -53,7 +53,7 @@ function createPowerChart(){
       type: 'spline'  
     },
     series: [{
-      name: 'BME280'
+      name: 'Time'
     }],
     title: { 
       text: undefined
@@ -75,7 +75,7 @@ function createPowerChart(){
     },
     yAxis: {
       title: { 
-        text: 'Humidity (%)' 
+        text: 'Power (W)'
       }
     },
     credits: { 
