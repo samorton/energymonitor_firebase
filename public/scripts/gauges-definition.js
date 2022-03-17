@@ -51,10 +51,10 @@ function createTemperatureGauge() {
     return gauge;
 }
 
-// Create Current POwer Gauge
+// Create Current Power Gauge
 function createPowerGauge(){
     var gauge = new RadialGauge({
-        renderTo: 'gauge-humidity',
+        renderTo: 'gauge-powers',
         width: 300,
         height: 300,
         units: "Power (watts)",
@@ -93,7 +93,8 @@ function createPowerGauge(){
         needleCircleOuter: true,
         needleCircleInner: false,
         animationDuration: 1500,
-        animationRule: "linear"
+        animationRule: "bounce"
+
     });
     return gauge;
 }

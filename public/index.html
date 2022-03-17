@@ -142,34 +142,34 @@
               </span>
             </p>
           </div>
-          <!--HUMIDITY-->
+          <!--Time-->
           <div class="card">
             <p>
               <i class="fas fa-tint" style="color: #00add6;"></i>
-              HUMIDITY
+              Local Time (on Meter)
             </p>
             <p>
               <span class="reading">
                 <span id="hum"></span>
-                &percnt;
               </span>
             </p>
           </div>
-          <!--PRESSURE-->
+          <!--Power-->
           <div class="card">
             <p>
               <i class="fas fa-angle-double-down" style="color: #e1e437;"></i>
-              PRESSURE
+              CURRENT POWER
             </p>
             <p>
               <span class="reading">
                 <span id="pres"></span>
-                hPa
+                W
               </span>
             </p>
           </div>
         </div>
       </div>
+
       <!--GAUGES-->
       <div id="gauges-div">
         <div class="cards">
@@ -177,9 +177,9 @@
           <div class="card">
             <canvas id="gauge-temperature"></canvas>
           </div>
-          <!--HUMIDITY-->
+          <!--Power-->
           <div class="card">
-            <canvas id="gauge-humidity"></canvas>
+            <canvas id="gauge-power"></canvas>
           </div>
         </div>
       </div>
@@ -193,6 +193,16 @@
             <input type="number" id="charts-range" />
           </p>
         </div>
+        <!--POWER-CHART-->
+        <div class="cards">
+          <div class="card">
+            <p>
+              <i class="fas fa-tint" style="color: #00add6;"></i>
+              POWER CHART
+            </p>
+            <div id="chart-power" class="chart-container"></div>
+          </div>
+        </div>
         <!--TEMPERATURE-CHART-->
         <div class="cards">
           <div class="card">
@@ -203,26 +213,7 @@
             <div id="chart-temperature" class="chart-container"></div>
           </div>
         </div>
-        <!--HUMIDITY-CHART-->
-        <div class="cards">
-          <div class="card">
-            <p>
-              <i class="fas fa-tint" style="color: #00add6;"></i>
-              HUMIDITY CHART
-            </p>
-            <div id="chart-humidity" class="chart-container"></div>
-          </div>
-        </div>
-        <!--PRESSURE-CHART-->
-        <div class="cards">
-          <div class="card">
-            <p>
-              <i class="fas fa-angle-double-down" style="color: #e1e437;"></i>
-              PRESSURE CHART
-            </p>
-            <div id="chart-pressure" class="chart-container"></div>
-          </div>
-        </div>
+
       </div>
 
       <!--BUTTONS TO HANDLE DATA-->
@@ -274,8 +265,8 @@
             <tr id="theader">
               <th>Timestamp</th>
               <th>Temp (ºC)</th>
-              <th>Hum (%)</th>
-              <th>Pres (hPa)</th>
+              <th>Power (W)</th>
+              <th>LocalTime</th>
             </tr>
             <tbody id="tbody"></tbody>
           </table>
