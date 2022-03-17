@@ -54,7 +54,7 @@ function createTemperatureGauge() {
 // Create Current Power Gauge
 function createPowerGauge(){
     var gauge = new RadialGauge({
-        renderTo: 'gauge-powers',
+        renderTo: 'gauge-power',
         width: 300,
         height: 300,
         units: "Power (watts)",
