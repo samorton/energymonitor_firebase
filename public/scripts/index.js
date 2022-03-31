@@ -83,11 +83,9 @@ const setupUI = (user) => {
             chartRange = Number(snapshot.val());
             console.log(chartRange);
             // Delete all data from charts to update with new values when a new range is selected
-            tempChart.destroy();
             powerChart.destroy();
 
             // Render new charts to display new range of data
-            tempChart = createTemperatureChart();
             powerChart = createPowerChart();
 
             // Update the charts with the new range
@@ -98,8 +96,7 @@ const setupUI = (user) => {
                 var temperature = jsonData.tmpr;
                 var energy = jsonData.ch2_watts;
                 var timestamp = jsonData.timestamp;
-                // Plot the values on the charts
-                plotValues(tempChart, timestamp, temperature);
+
                 plotValues(powerChart, timestamp, energy);
 
             });
@@ -110,17 +107,41 @@ const setupUI = (user) => {
             chartRef.set(chartsRangeInputElement.value);
         };
 
-        cardsCheckboxElement.addEventListener('change', (e) => {
-            cardsReadingsElement.style.display = 'block';
+
+
+        cardsCheckboxElement.addEventListener('change', (e) =>{
+            if (cardsCheckboxElement.checked) {
+                cardsReadingsElement.style.display = 'block';
+            }
+            else{
+                cardsReadingsElement.style.display = 'none';
+            }
+        });
+        // Checbox (gauges for sensor readings)
+        gaugesCheckboxElement.addEventListener('change', (e) =>{
+            if (gaugesCheckboxElement.checked) {
+                gaugesReadingsElement.style.display = 'block';
+            }
+            else{
+                gaugesReadingsElement.style.display = 'none';
+            }
+        });
+        // Checbox (charta for sensor readings)
+        chartsCheckboxElement.addEventListener('change', (e) =>{
+            if (chartsCheckboxElement.checked) {
+                chartsDivElement.style.display = 'block';
+            }
+            else{
+                chartsDivElement.style.display = 'none';
+            }
         });
 
-        gaugesCheckboxElement.addEventListener('change', (e) => {
-            gaugesReadingsElement.style.display = 'block';
-        });
 
-        chartsCheckboxElement.addEventListener('change', (e) => {
-            chartsDivElement.style.display = 'block';
-        });
+
+
+
+
+
 
         // CARDS
         // Get the latest readings and display on cards
